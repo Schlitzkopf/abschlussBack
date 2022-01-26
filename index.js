@@ -22,7 +22,7 @@ app.use(express.json());
 app.use("/animal", animal);
 
 app.get("/", (req, res) =>
-    res.send("<h1>API mit MongoDB (native)</h1>")
+    res.send("<h1>API mit MongoDB</h1>")
 );
 
 app.listen(port, () =>
