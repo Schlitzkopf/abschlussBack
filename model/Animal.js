@@ -12,7 +12,7 @@ const animalSchema = new Schema({
     gechipt: {type: String, required:true},
     geimpft: {type: String, required:true},
     kinderfreundlich: {type: String},
-    ort: {type: String},
+    ort: {type: String, required:true},
     bildUrl: {type: String},
     videoUrl: {type: String},
     tier: {type: String, required:true},
