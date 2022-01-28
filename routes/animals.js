@@ -5,10 +5,20 @@ import {
     getAllAnimal,
     getSingleAnimal,
     updateAnimal,
+    getAllDogs,
+    getAllRodents,
+    getAllEmergency,
+    getAllLucky,
+    getAllCats
 } from "../controllers/animals.js";
 const animal = express.Router();
 
 animal.route("/").get(getAllAnimal).post(createAnimal);
+animal.route("/dogs").get(getAllDogs);
+animal.route("/cats").get(getAllCats);
+animal.route("/rodents").get(getAllRodents);
+animal.route("/emergency").get(getAllEmergency);
+animal.route("/lucky").get(getAllLucky);
 animal
     .route("/:id")
     .get(getSingleAnimal)

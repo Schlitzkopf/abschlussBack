@@ -14,7 +14,9 @@ const animalSchema = new Schema({
     kinderfreundlich: {type: String},
     ort: {type: String},
     bildUrl: {type: String},
-    videoUrl: {type: String}
+    videoUrl: {type: String},
+    tier: {type: String, required:true},
+    beschreibung: {type: String}
 });
 
 export default model("Animal", animalSchema);

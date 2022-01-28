@@ -1,4 +1,5 @@
 import Animal from "../model/Animal.js";
+import animal from "../routes/animals.js";
 
 export const getAllAnimal = async (req, res) => {
     try {
@@ -8,6 +9,46 @@ export const getAllAnimal = async (req, res) => {
         res.status(500).json({error: error.message});
     }
 };
+export const getAllDogs = async (req, res) => {
+    try {
+        const dogs = await Animal.find({tier: 'hund'});
+        res.status(200).json({animal: dogs })
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
+export const getAllCats = async (req, res) => {
+    try {
+        const cats = await Animal.find({tier: 'katze'})
+        res.status(200).json({animal: cats })
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
+export const getAllRodents =async (req, res) => {
+    try {
+        const rodents = await Animal.find({tier: 'nagetier'})
+        res.status(200).json({animal: rodents })
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
+export const getAllEmergency =async (req, res) => {
+    try {
+        const emergency = await Animal.find({tier: 'notfall'})
+        res.status(200).json({animal: emergency })
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
+export const getAllLucky =async (req, res) => {
+    try {
+        const lucky = await Animal.find({tier: 'glücklich'})
+        res.status(200).json({animal: lucky })
+    } catch (error) {
+        res.status(500).json({error: error.message});
+    }
+}
 export const getSingleAnimal = async (req, res) => {
     try {
         const { id } = req.params;
