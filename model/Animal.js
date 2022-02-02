@@ -17,6 +17,7 @@ const animalSchema = new Schema({
   videoUrl: { type: String },
   tier: { type: String, required: true },
   beschreibung: { type: String },
+  gewicht: {type: String}
 });
 
 export default model("Animal", animalSchema);
