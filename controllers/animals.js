@@ -27,7 +27,7 @@ export const getAllCats = async (req, res) => {
 };
 export const getAllRodents = async (req, res) => {
   try {
-    const rodents = await Animal.find({ inputTier: "nageinputTier" });
+    const rodents = await Animal.find({ inputTier: "nagetier" });
     res.status(200).json({ animal: rodents });
   } catch (error) {
     res.status(500).json({ error: error.message });
