@@ -2,22 +2,22 @@ import mongoose from "mongoose";
 const { Schema, model } = mongoose;
 
 const animalSchema = new Schema({
-  name: { type: String, required: true },
-  rasse: { type: String, required: true },
-  gewicht: {type: String},
-  geschlecht: { type: String, required: true },
-  gechipt: { type: String, required: true },
-  geimpft: { type: String, required: true },
-  kastriert: { type: String, required: true },
-  kinderfreundlich: { type: String },
-  vertraeglickeit: { type: String },
-  geburtstag: { type: Number, required: true },
-  ort: { type: String, required: true },
-  bildUrl: { type: String },
-  tier: { type: String, required: true },
-  beschreibung: { type: String },
-  videoUrl: { type: String },
-  verhalten: { type: String }
+  inputName: { type: String, required: true },
+  inputRasse: { type: String, required: true },
+  inputGewicht: {type: String},
+  inputGeschlecht: { type: String, required: true },
+  inputGechipt: { type: String, required: true },
+  inputGeimpft: { type: String, required: true },
+  inputKastriert: { type: String, required: true },
+  inputKinderfreundlich: { type: String },
+  inputVertraeglickeit: { type: String },
+  inputGeburtstag: { type: Number, required: true },
+  inputOrt: { type: String, required: true },
+  inputBildUrl: { type: String },
+  inputTier: { type: String, required: true },
+  inputBeschreibung: { type: String },
+  inputVideoUrl: { type: String },
+  inputVerhalten: { type: String }
 });
 
 export default model("Animal", animalSchema);

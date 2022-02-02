@@ -11,7 +11,7 @@ export const getAllAnimal = async (req, res) => {
 };
 export const getAllDogs = async (req, res) => {
   try {
-    const dogs = await Animal.find({ tier: "hund" });
+    const dogs = await Animal.find({ inputTier: "hund" });
     res.status(200).json({ animal: dogs });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -19,7 +19,7 @@ export const getAllDogs = async (req, res) => {
 };
 export const getAllCats = async (req, res) => {
   try {
-    const cats = await Animal.find({ tier: "katze" });
+    const cats = await Animal.find({ inputTier: "katze" });
     res.status(200).json({ animal: cats });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -27,7 +27,7 @@ export const getAllCats = async (req, res) => {
 };
 export const getAllRodents = async (req, res) => {
   try {
-    const rodents = await Animal.find({ tier: "nagetier" });
+    const rodents = await Animal.find({ inputTier: "nageinputTier" });
     res.status(200).json({ animal: rodents });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -35,7 +35,7 @@ export const getAllRodents = async (req, res) => {
 };
 export const getAllEmergency = async (req, res) => {
   try {
-    const emergency = await Animal.find({ tier: "notfall" });
+    const emergency = await Animal.find({ inputTier: "notfall" });
     res.status(200).json({ animal: emergency });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -43,7 +43,7 @@ export const getAllEmergency = async (req, res) => {
 };
 export const getAllLucky = async (req, res) => {
   try {
-    const lucky = await Animal.find({ tier: "glücklich" });
+    const lucky = await Animal.find({ inputTier: "glücklich" });
     res.status(200).json({ animal: lucky });
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -61,38 +61,38 @@ export const getSingleAnimal = async (req, res) => {
 export const createAnimal = async (req, res) => {
   try {
     const {
-      name,
-      rasse,
-      gewicht,
-      geschlecht,
-      gechipt,
-      geimpft,
-      kastriert,
-      kinderfreundlich,
-      vertraeglichkeit,
-      geburtstag,
-      ort,
-      bildUrl,
-      videoUrl,
-      tier,
-      verhalten,
+      inputName,
+      inputRasse,
+      inputGewicht,
+      inputGeschlecht,
+      inputGechipt,
+      inputGeimpft,
+      inputKastriert,
+      inputKinderfreundlich,
+      inputVertraeglichkeit,
+      inputGeburtstag,
+      inputOrt,
+      inputBildUrl,
+      inputVideoUrl,
+      inputTier,
+      inputVerhalten,
     } = req.body;
     const newAnimal = await Animal.create({
-      name,
-      rasse,
-      gewicht,
-      geschlecht,
-      gechipt,
-      geimpft,
-      kastriert,
-      kinderfreundlich,
-      vertraeglichkeit,
-      geburtstag,
-      ort,
-      bildUrl,
-      videoUrl,
-      tier,
-      verhalten,
+      inputName,
+      inputRasse,
+      inputGewicht,
+      inputGeschlecht,
+      inputGechipt,
+      inputGeimpft,
+      inputKastriert,
+      inputKinderfreundlich,
+      inputVertraeglichkeit,
+      inputGeburtstag,
+      inputOrt,
+      inputBildUrl,
+      inputVideoUrl,
+      inputTier,
+      inputVerhalten,
     });
     res.status(201).json(newAnimal);
   } catch (error) {
@@ -112,40 +112,40 @@ export const updateAnimal = async (req, res) => {
   try {
     const { id } = req.params;
     const {
-      name,
-      rasse,
-      gewicht,
-      geschlecht,
-      gechipt,
-      geimpft,
-      kastriert,
-      kinderfreundlich,
-      vertraeglichkeit,
-      geburtstag,
-      ort,
-      bildUrl,
-      videoUrl,
-      tier,
-      verhalten,
+      inputName,
+      inputRasse,
+      inputGewicht,
+      inputGeschlecht,
+      inputGechipt,
+      inputGeimpft,
+      inputKastriert,
+      inputKinderfreundlich,
+      inputVertraeglichkeit,
+      inputGeburtstag,
+      inputOrt,
+      inputBildUrl,
+      inputVideoUrl,
+      inputTier,
+      inputVerhalten,
     } = req.body;
     const updatedAnimal = await Animal.findByIdAndUpdate(
       id,
       {
-        name,
-        rasse,
-        gewicht,
-        geschlecht,
-        gechipt,
-        geimpft,
-        kastriert,
-        kinderfreundlich,
-        vertraeglichkeit,
-        geburtstag,
-        ort,
-        bildUrl,
-        videoUrl,
-        tier,
-        verhalten,
+        inputName,
+        inputRasse,
+        inputGewicht,
+        inputGeschlecht,
+        inputGechipt,
+        inputGeimpft,
+        inputKastriert,
+        inputKinderfreundlich,
+        inputVertraeglichkeit,
+        inputGeburtstag,
+        inputOrt,
+        inputBildUrl,
+        inputVideoUrl,
+        inputTier,
+        inputVerhalten,
       },
       { new: true }
     );
