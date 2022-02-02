@@ -94,7 +94,7 @@ export const createAnimal = async (req, res) => {
       inputTier,
       inputVerhalten,
     });
-    res.status(201).json(newAnimal);
+    res.status(201).json("Success");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -103,7 +103,7 @@ export const deleteAnimal = async (req, res) => {
   try {
     const { id } = req.params;
     const deletAnimal = await Animal.findByIdAndDelete(id);
-    res.status(200).json(deletAnimal);
+    res.status(200).json("Success");
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -149,7 +149,7 @@ export const updateAnimal = async (req, res) => {
       },
       { new: true }
     );
-    res.status(200).json(updatedAnimal);
+    res.status(200).json("Success", updatedAnimal);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
