@@ -75,6 +75,7 @@ export const createAnimal = async (req, res) => {
       inputBildUrl,
       inputVideoUrl,
       inputTier,
+      inputBeschreibung,
       inputVerhalten,
     } = req.body;
     const newAnimal = await Animal.create({
@@ -92,6 +93,7 @@ export const createAnimal = async (req, res) => {
       inputBildUrl,
       inputVideoUrl,
       inputTier,
+      inputBeschreibung,
       inputVerhalten,
     });
     res.status(201).json("Success");
@@ -126,6 +128,7 @@ export const updateAnimal = async (req, res) => {
       inputBildUrl,
       inputVideoUrl,
       inputTier,
+      inputBeschreibung,
       inputVerhalten,
     } = req.body;
     const updatedAnimal = await Animal.findByIdAndUpdate(
@@ -145,6 +148,7 @@ export const updateAnimal = async (req, res) => {
         inputBildUrl,
         inputVideoUrl,
         inputTier,
+        inputBeschreibung,
         inputVerhalten,
       },
       { new: true }
