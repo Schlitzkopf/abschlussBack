@@ -10,7 +10,7 @@ const animalSchema = new Schema({
   inputGeimpft: { type: String, required: true },
   inputKastriert: { type: String, required: true },
   inputKinderfreundlich: { type: String, required: true  },
-  inputVertraeglickeit: { type: String, required: true  },
+  inputVertraeglickeit: { type: String },
   inputGeburtstag: { type: Number, required: true },
   inputOrt: { type: String, required: true },
   inputBildUrl: { type: String },
