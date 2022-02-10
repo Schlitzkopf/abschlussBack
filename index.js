@@ -23,6 +23,6 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use("/animal", animal);
 
-app.get("/", (req, res) => res.send("<h1>API mit MongoDB</h1>"));
+app.get("/*", (req, res) => res.send("<h1>API mit MongoDB</h1>"));
 
 app.listen(port, () => console.log(`Server listening on port ${port}`));
